@@ -13,6 +13,29 @@
 
 ## 2. Project Summary
 
+Device Description
+Give a 2 sentence description of your device.
+What inspired you to do the project? What problem is your device solving?
+How do you use the Internet to augment your device functionality?
+Device Functionality
+Explain how your Internet-connected device is designed
+Include sensors, actuators, and other critical components.
+Include your system-level block diagram here.
+Challenges
+Where did you face difficulties? This could be in firmware, hardware, software, integration, etc.
+How did you overcome these challenges?
+Prototype Learnings
+What lessons did you learn by building and testing this prototype?
+What would you do differently if you had to build this device again?
+Next Steps & Takeaways
+What steps are needed to finish or improve this project?
+What did you learn in ESE5160 through the lectures, assignments, and this course-long prototyping project?
+Project Links
+Provide a URL to your Node-RED instance for our review (make sure it’s running on your Azure instance!)
+Provide the share link to your final PCBA on Altium 365.
+Consider downloading your PCBA source and manufacturing files to keep after you leave UPenn. Your Altium access will expire after this semester.
+
+
 ## 3. Hardware & Software Requirements
 
 Note: Since we had a late project change, we have created new HRS and SRS for the new project (post-facto) based on our goals when this project was created. We are evaluating our final output relative to these goals of the ideal new project expectations.
