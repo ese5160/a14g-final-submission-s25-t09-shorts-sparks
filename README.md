@@ -20,6 +20,7 @@ Give a 2 sentence description of your device.
 What inspired you to do the project? What problem is your device solving?
 
 How do you use the Internet to augment your device functionality?
+- The stabilization device could also be activated remotely (e.g. on a private yatch, the user does not need to go to the control room and could activate it from the comfort of their beedroom). The data of the boat's tilt is also transfered live to a dashboard which anyone anywhere could see, such as friends and family on shore. In addition, this allows for additional features such as "text emergency contact" when the boat is detected to have capsized in rough waters.
 
 Device Functionality
 Explain how your Internet-connected device is designed
