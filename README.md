@@ -19,6 +19,9 @@ A boat active stabilization device (Seakeeper) to combat the rocking (roll) moti
 
 ### What inspired you to do the project? What problem is your device solving?
 
+The inspiration for our project was less of an "inspiration", more of a "maximize what we had". Due to our neumerous manufacturer issues that made the original project (CNC machine) impossible. 
+
+
 ### How do you use the Internet to augment your device functionality?
 
 The stabilization device could also be activated remotely (e.g. on a private yatch, the user does not need to go to the control room and could activate it from the comfort of their beedroom). The data of the boat's tilt is also transfered live to a dashboard which anyone anywhere could see, such as friends and family on shore. In addition, this allows for additional features such as "text emergency contact" when the boat is detected to have capsized in rough waters.
