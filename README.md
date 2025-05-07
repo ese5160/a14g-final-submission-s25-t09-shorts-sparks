@@ -13,44 +13,47 @@
 
 ## 2. Project Summary
 
-Device Description:  
-Give a 2 sentence description of your device.
-- A boat active stabilization device (Seakeeper) to combat the rocking (roll) motion of a boat at sea due to waves, improving rider comfort. The system uses an IMU to detect boat tilting and uses the gyroscopic precession effect of a spinning flywheel to counteract the motion.
+### Device Description:  
 
-What inspired you to do the project? What problem is your device solving?
+A boat active stabilization device (Seakeeper) to combat the rocking (roll) motion of a boat at sea due to waves, improving rider comfort. The system uses an IMU to detect boat tilting and uses the gyroscopic precession effect of a spinning flywheel to counteract the motion.
 
-How do you use the Internet to augment your device functionality?
-- The stabilization device could also be activated remotely (e.g. on a private yatch, the user does not need to go to the control room and could activate it from the comfort of their beedroom). The data of the boat's tilt is also transfered live to a dashboard which anyone anywhere could see, such as friends and family on shore. In addition, this allows for additional features such as "text emergency contact" when the boat is detected to have capsized in rough waters.
+### What inspired you to do the project? What problem is your device solving?
 
-Device Functionality
+### How do you use the Internet to augment your device functionality?
+
+The stabilization device could also be activated remotely (e.g. on a private yatch, the user does not need to go to the control room and could activate it from the comfort of their beedroom). The data of the boat's tilt is also transfered live to a dashboard which anyone anywhere could see, such as friends and family on shore. In addition, this allows for additional features such as "text emergency contact" when the boat is detected to have capsized in rough waters.
+
+### Device Functionality
+
 Explain how your Internet-connected device is designed
 
 Include sensors, actuators, and other critical components.
 
 Include your system-level block diagram here.
 
-Challenges
+### Challenges
+
 Where did you face difficulties? This could be in firmware, hardware, software, integration, etc.
 
 How did you overcome these challenges?
 
-Prototype Learnings
+### Prototype Learnings
+
 What lessons did you learn by building and testing this prototype?
 
 What would you do differently if you had to build this device again?
 
-Next Steps & Takeaways
+### Next Steps & Takeaways
+
 What steps are needed to finish or improve this project?
 
 What did you learn in ESE5160 through the lectures, assignments, and this course-long prototyping project?
 
-Project Links
-Provide a URL to your Node-RED instance for our review (make sure it’s running on your Azure instance!)
+### Project Links
 
-Provide the share link to your final PCBA on Altium 365.
+[Node Red UI Instance](http://172.190.141.169:1880/ui/#!/0?socketid=IxHLWtM_3o6IbezjAABr)
 
-Consider downloading your PCBA source and manufacturing files to keep after you leave UPenn. Your Altium access will expire after this semester.
-
+[Altium 365 Link](https://upenn-eselabs.365.altium.com/designs/DDC6BC9F-ABAE-498F-8839-63F1F02EF066)
 
 ## 3. Hardware & Software Requirements
 
@@ -88,6 +91,38 @@ Requests and receives imu data at 200 hz to input into 200hz kalman filter -> 10
 
 
 ## 4. Project Photos & Screenshots
+
+### Standalone PCBA, top
+
+![alt text](images/pcba_top.png)
+
+### Standalone PCBA, bottom
+
+![alt text](images/pcba_bottom.png)
+
+### Thermal Image of PCBA under laod
+
+![alt text](images/pcba_load_thermal.png)
+
+### Altium Board design 2D view
+
+![alt text](images/2d_altium.png)
+
+### Altium Board design 3D view
+
+![alt text](images/3d_altium.png)
+
+### Node-RED dashboard
+
+![alt text](images/node_red_dashboard.png)
+
+### Node-RED backend
+
+![alt text](images/node_red_backend.png)
+
+### Block diagram of your system
+
+
 
 ## Codebase
 
