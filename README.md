@@ -46,7 +46,8 @@ Include your system-level block diagram here.
 
 Where did you face difficulties? This could be in firmware, hardware, software, integration, etc.
 
-- Our major challenge was hardwware (and as a result a lack of time), due to unforseen factors from the manufactures that caused countless unfixable PCM issues (potentially wrong reflow temperature that killed the ICs). 
+- Our major challenge was hardwware (and as a result a lack of time), due to unforseen factors from the manufactures that caused countless unfixable PCB issues (potentially wrong reflow temperature that killed the ICs). This quite literally killed our original project, leaving us only 3 days to try to implement and demo a new project from scratch. The new project suffered from lack of development/debugging time, with potential further hardware issues that we did not have time to pinpoint (unable to move our gimbal actuator as we could not get a second PWM to output from a different pin).
+
 
 How did you overcome these challenges?
 
