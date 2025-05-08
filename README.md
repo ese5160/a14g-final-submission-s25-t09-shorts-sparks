@@ -32,15 +32,21 @@ How do you use the Internet to augment your device functionality?
 
 Explain how your Internet-connected device is designed
 
+- answer
+
 Include sensors, actuators, and other critical components.
 
+- answer
+
 Include your system-level block diagram here.
+
+- answer
 
 ### Challenges
 
 Where did you face difficulties? This could be in firmware, hardware, software, integration, etc.
 
-Our 
+- Our major challenge 
 
 How did you overcome these challenges?
 
