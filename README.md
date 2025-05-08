@@ -97,7 +97,7 @@ What did you learn in ESE5160 through the lectures, assignments, and this course
 
 ## 3. Hardware & Software Requirements
 
-Note: Since we had a late project change, we have created new HRS and SRS for the new project (post-facto) based on our goals when this project was created. We will attempt to evaluate our final output relative to these goals that reflect the ideal new project expectations.
+Note: Since we had a late project change, we have created new HRS and SRS for the new project (post-facto) based on our goals when this project was created. We will attempt to evaluate our final output relative to these goals that reflect the ideal new project expectations. We recognize that some of these requirements are very basic and could be developed much further to frame a project, but since they were made post facto and again very limited time (we focused more on actual implementation for as long as possible) we hope this is sufficient to have some picutre of the intentions
 
 ### HRS
 
@@ -107,25 +107,14 @@ Note: Since we had a late project change, we have created new HRS and SRS for th
 | HRS-02 | We shall reporpose as much of mechanical hardware as possible | Success: Used the Spindle motor as flywheel motor, bearing blocks, linear rods, aluminum extrusion, ... See pictures/video to see structure |
 | HRS-03 | The DC flywheel shall be driven with a mosfet driver to allow for PWM speed control | Success: See video demos for control |
 | HRS-04 | The system shall have external non-voilatile memory (microSD) of no less than 512MB for storing G-code and current progress (in any pause scenario) | N/A |
-| HRS-05 |  | N/A |
-| HRS-06 |  | N/A |
+| HRS-05 | An IMU shall sample acceleartion and gyro in necessary axes (gz, ax, ay) at at least 200 Hz (for Kalman filter input) | Success: The refresh rate of IMU is 417 Hz, and we sample in an RTOS task running at 200 Hz ?Testing video? |
+| HRS-06 | The system shall use a stepper motor to change the angle of the flywheel and provide a torque to the boat | Fail: We switched to a servo motor |
 | HRS-07 |  | N/A |
 | HRS-08 |  | N/A |
 | HRS-09 |  | N/A |
 | HRS-10 |  | N/A |
-| HRS-11 |  | N/A |
-| HRS-12 | The stepper motors shall use encoders for closed loop feedback | N/A |
-| HRS-13 | A SAMD21 for each axis shall handle the closed loop control | N/A |
 
-IMU shall sample at least at 200 Hz (we will request measurements at 200 Hz for kalman filter input)
-
-MCU (capabilities?) (at least FM i2c?, WIFI, PWM, SPI, ..., flash space for bootloader and Application code)
-
-SD card access at ... speed, sapce for application code files
-
-DC motor driven at least 24V 5??A (MOSFET + gate drive) - show DC Eload as proof of capability
-
-Use the PCBA made for the original project as much as possible
+I recog
 
 Stepper motor - Fail --> servo motor from another SAMW pin
 
@@ -204,7 +193,7 @@ Included for reference, not for review as the project could not be completed in 
 
 ### Final Project Assembly
 
-
+![alt text](images/IMG_5749.JPG)
 
 ### Standalone PCBA, top
 
