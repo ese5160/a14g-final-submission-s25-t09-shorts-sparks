@@ -52,7 +52,7 @@ Where did you face difficulties? This could be in firmware, hardware, software, 
 
 How did you overcome these challenges?
 
-- These fundamental challenges were in a way "impossible" to overcome, but we were able to make the most out of what was possible over the course of 3 days given time and hardware constraints.
+- These fundamental challenges were in a way "impossible" to overcome, but we were able to make the most out of what was possible. Over the course of 3 days given time and hardware constraints, we were able to: 
    1. Successfully completed a new mechanical CAD and finished the physical construction which had all the necessary features of a fully functioning CMG.
    2. Rebuilt our Node-Red rebuilt dashboard interface, integrated flywheel power setting, logging IMU data (boat tilt), manual/automatic activation of the system, OTAFU, boat capsize detection that will alert the dashboard and text a number.
    3. Wrote new drivers for our new I2C device (IMU), and successfully read out the data of interest and send over to dashboard for data visualization + logging.
