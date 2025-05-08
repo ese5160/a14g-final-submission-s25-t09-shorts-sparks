@@ -21,7 +21,7 @@ Give a 2 sentence description of your device.
 
 What inspired you to do the project? What problem is your device solving?
 
-- The inspiration for our project was less of an "inspiration", more of a "maximize what we had". Due to our neumerous manufacturer issues that made the original project (CNC machine) impossible. We took everything that remained functional on our PCB, and asked ourselves what is the coolest project we could make. Specifically, we had 1 board semi functional including the SAMW25, Mosfet driver for big DC motor, Stepper driver, and a QWIIC connector to I2C. From here, we came up with this boat stabilizer idea (control moment gyro/CMG) as it perfectly maximizes our functional hrdware. Our original CNC spindle motor was repurposed to spin a flywheel, the stepper motor could be used as the gimbal actuator, and the QWIIC connector allows us to connect an external IMU to measure a the tilt of a boat so that the CMG could actively compensate and reduce the rocking motion. 
+- The inspiration for our project was less of an "inspiration", more of a "maximize what we had". Due to our neumerous manufacturer issues that made the original project (CNC machine) impossible. We took everything that remained functional on our PCB, and asked ourselves what is the coolest project we could make. Specifically, we had 1 board semi functional including the SAMW25, Mosfet driver for big DC motor, Stepper driver, all of the power regulation (24V, 5V, 3.3V) and a QWIIC connector to I2C. From here, we came up with this boat stabilizer idea (control moment gyro/CMG) as it perfectly maximizes our functional hrdware. Our original CNC spindle motor was repurposed to spin a flywheel, the stepper motor could be used as the gimbal actuator, and the QWIIC connector allows us to connect an external IMU to measure a the tilt of a boat so that the CMG could actively compensate and reduce the rocking motion. 
 
 
 How do you use the Internet to augment your device functionality?
@@ -48,10 +48,12 @@ Where did you face difficulties? This could be in firmware, hardware, software, 
 
 - Our major challenge was hardwware (and as a result a lack of time), due to unforseen factors from the manufactures that caused countless unfixable PCB issues (potentially wrong reflow temperature that killed the ICs). This quite literally killed our original project, leaving us only 3 days to try to implement and demo a new project from scratch.
 
-The new project suffered from lack of development/debugging time, with potential further hardware issues that we did not have time to pinpoint (unable to move our gimbal actuator as we could not get a second PWM to output from a different pin).
-
+- The new project suffered from lack of development/debugging time, with potential further hardware issues that we did not have time to pinpoint (unable to move our gimbal actuator as we could not get a second PWM to output from a different pin). This meant that we were unable to demonstrate the full integrated active roll compensation (which was the mian selling point). 
 
 How did you overcome these challenges?
+
+- These fundamental challenges were in a way "impossible" to overcome, but we were able to make the most out of what was possible over the course of 3 days given time and hardware constraints.
+   1. We successfully completed a new mechanical CAD and finished the physical construction which had all the necessary features of a fully functioning CMG; rebuilt our Node-Red rebuilt dashboard interface, integrated flywheel power setting, logging  ; wrote new drivers for our new I2C device (IMU), and successfully read out the data of interest; wrote a motor control driver that will ramp up/dpwn the speed to any user set speed; 
 
 ### Prototype Learnings
 
