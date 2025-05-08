@@ -97,7 +97,7 @@ What did you learn in ESE5160 through the lectures, assignments, and this course
 
 ## 3. Hardware & Software Requirements
 
-Note: Since we had a late project change, we have created new HRS and SRS for the new project (post-facto) based on our goals when this project was created. We will attempt to evaluate our final output relative to these goals that reflect the ideal new project expectations. We recognize that some of these requirements are very basic and could be developed much further to frame a project, but since they were made post facto and again very limited time (we focused more on actual implementation for as long as possible) we hope this is sufficient to have some picutre of the intentions
+Note: Since we had a late project change, we have created new HRS and SRS for the new project (post-facto) based on our goals when this project was created. We will attempt to evaluate our final output relative to these goals that reflect the ideal new project expectations. We recognize that some of these requirements are very basic and could be developed much further to frame a project, but since they were made post facto and again very limited time (we focused more on actual implementation for as long as possible) we hope this is sufficient to have some picutre of the intentions. The review is also more brief, in accordance with the nature of the requirements.
 
 ### HRS
 
@@ -108,31 +108,22 @@ Note: Since we had a late project change, we have created new HRS and SRS for th
 | HRS-03 | The DC flywheel shall be driven with a mosfet driver to allow for PWM speed control | Success: See video demos for control |
 | HRS-04 | The system shall have external non-voilatile memory (microSD) of no less than 512MB for storing G-code and current progress (in any pause scenario) | N/A |
 | HRS-05 | An IMU shall sample acceleartion and gyro in necessary axes (gz, ax, ay) at at least 200 Hz (for Kalman filter input) | Success: The refresh rate of IMU is 417 Hz, and we sample in an RTOS task running at 200 Hz ?Testing video? |
-| HRS-06 | The system shall use a stepper motor to change the angle of the flywheel and provide a torque to the boat | Fail: We switched to a servo motor |
-| HRS-07 |  | N/A |
-| HRS-08 |  | N/A |
-| HRS-09 |  | N/A |
-| HRS-10 |  | N/A |
-
-I recog
-
-Stepper motor - Fail --> servo motor from another SAMW pin
+| HRS-06 | The system shall use a stepper motor to change the angle of the flywheel and provide a torque to the boat | Fail: We switched to a servo motor using PWM from SAMW (unsuccessful also), as simpler than SAMD21 interfacing to use the Stepper driver (connected to SAMD21 on pcba) |
 
 ### SRS
 
-UART SAMW to SAMD for communication between mcus on board - Fail -->
-
-PWM at 10khz (ish) for 
-
-Ramp changes in dc motor PWM for ...
-
-Node red / wifi interfacing for remote data show and user input
-
-OTAFU implemented (show node red and / or cli) (note bootloader existance?)
-
-Drivers?
-
-Requests and receives imu data at 200 hz to input into 200hz kalman filter -> 100hz pid motor control loop
+| Req ID | Requirement | Review |
+| ------ | ----------- | ------ |
+| SRS-01 | System shall use IMU data as input to Kalman filter of optimally 200Hz and at least 100Hz | Fail: timeline and implementation issues prevented this from being persued and implemented |
+| SRS-02 | A pid control loop shall execute at optimally 100Hz and at least 50Hz | Fail: servo was not functional, so PID was not necessary or implemented |
+| SRS-03 | The MCU in the SAMW25 module shall run an RTOS | Success: See codebase, all videos run applicaiton code in FreeRTOS |
+| SRS-04 | The user shall be able to remotely set flywheel speed | Success: See demo video |
+| SRS-05 | The system shall be able to send IMU data to the web portal for remote user access | Success: See demo video |
+| SRS-06 | The SAMW25 and SAMD21 mcus on the board should communicate over UART to transimit PWM or data for distributed processing as possible or best feasable as found in development | Fail: UART developed on both indpendantly successfully (on pins already connected on the PCBA). Logic analyzer captures were used to assess this on SAMD21 and moving the CLI uart to different pins on SAMW25. Creating a separate simultaneous (with cli) uart implementation on the samw led to integration issues, and this was dropped in favor of a simpler, time sensitive approach |
+| SRS-07 | The system shall generate 10kHz PWM at various duty cycles in a ramping manner for safe DC motor control (flywheel) | Success: see codebase DcMotor.c and Demo video for example |
+| SRS-08 | User shall be able to remotely activate and disable tilt compensation | Partial Success: Node red/wifi setting successful, but servo/feedback actuation unsucessful |
+| SRS-09 | OTAFU shall be able to be initiated remotely through web portal (node-red) | Success: See demo video |
+| SRS-10 | An OTAFU shall be implemented | Success: See demo video |
 
 ### CNC Machine Requirements from A07G, noting differences from original proposal in A00G
 
