@@ -80,7 +80,7 @@ What did you learn in ESE5160 through the lectures, assignments, and this course
 
 ## 3. Hardware & Software Requirements
 
-Note: Since we had a late project change, we have created new HRS and SRS for the new project (post-facto) based on our goals when this project was created. We are evaluating our final output relative to these goals of the ideal new project expectations.
+Note: Since we had a late project change, we have created new HRS and SRS for the new project (post-facto) based on our goals when this project was created. We will attempt to evaluate our final output relative to these goals that reflect the ideal new project expectations.
 
 ### HRS
 
