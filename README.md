@@ -42,31 +42,50 @@ The entire system revolves(get it? haha) around the flywheel. Using the principl
 
 Where did you face difficulties? This could be in firmware, hardware, software, integration, etc.
 
-- Our major challenge was hardware (and as a result a lack of time), due to unforseen factors from the manufactures that caused countless unfixable PCB issues (potentially wrong reflow temperature that killed the ICs). This quite literally killed our original project, leaving us only 3 days to try to implement and demo a new project from scratch.
+- Our major challenge was hardware (and as a result a lack of time), due to unforseen factors from the manufactures that caused several unfixable PCB issues (possibly due to wrong reflow temperature that killed the ICs). This quite literally killed our original project, leaving us only 3 days to try to implement and demo a new project from scratch. Again, this document provides specific information on board issues: [Board Issues Google Document](https://docs.google.com/document/d/17aVozhZWAjP6q5agUZiOJsjJb8daSV915WeSpyRnOJc/edit?usp=sharing)
 
-- The new project suffered from lack of development/debugging time, with potential further hardware issues that we did not have time to pinpoint (unable to move our gimbal actuator as we could not get a second PWM to output from a different pin). This meant that we were unable to demonstrate the full integrated active roll compensation (which was the mian selling point). 
+- The new project suffered from lack of development/debugging time, with potential further hardware issues that we did not have time to pinpoint (unable to move our gimbal actuator as we could not get a second PWM instance on a different tcc unit to output from other pins. Tried 8 total pins, only the one used for the flywheel motor worked). This meant that we were unable to demonstrate the full integrated active roll compensation (which was the main selling point).
 
 How did you overcome these challenges?
 
-- These fundamental challenges were in a way "impossible" to overcome, but we were able to make the most out of what was possible. Over the course of 3 days given time and hardware constraints, we were able to: 
+- These fundamental challenges were in a way "impossible" to overcome, but we were able to make the most out of what was possible. Over the course of 3 days into the demo and a few hours of refinement post-demo day (Node-RED otafu and additional servo troubleshooting), we were able to: 
    1. Successfully completed a new mechanical CAD and finished the physical construction which had all the necessary features of a fully functioning CMG.
-   2. Rebuilt our Node-Red rebuilt dashboard interface, integrated flywheel power setting, logging IMU data (boat tilt), manual/automatic activation of the system, OTAFU, boat capsize detection that will alert the dashboard and text a number.
-   3. Wrote new drivers for our new I2C device (IMU), and successfully read out the data of interest and send over to dashboard for data visualization + logging.
-   4. Wrote a motor control driver that will ramp up/dpwn the speed to any user set speed from the dashboard.
+   2. Rebuilt our Node-RED rebuilt dashboard interface, integrated flywheel power setting, logging IMU data (boat tilt), manual/automatic activation of the system, OTAFU, boat capsize detection that will alert the dashboard and text a phone number.
+   3. Wrote drivers for our new I2C device (IMU), and successfully read out the data of interest and send over to dashboard for data visualization + logging.
+   4. Wrote a motor dc control driver that will ramp up/dpwn the speed to any user set speed from the dashboard.
 
-- Due to potentially even more hardware issue, we were unable to generate a second PWM for the gimbal actuator (servo), which unfortunately also limited our ability to do a full integration of everything. 
+- Due to potentially even more hardware issue, we were unable to generate a second PWM for the gimbal actuator (servo), which unfortunately also limited our ability to do a full integration of everything. Some of the attempted pins did generate pwm using the dev board, but given the end of semester and final exams, we did not have time to completely isolate and troubleshoot this issue to a resolution.
 
 ### Prototype Learnings
 
 What lessons did you learn by building and testing this prototype?
 
+- We learned a lot about the manufacturing and developing process and considerations to make in the planning and execution stages of prototyping.
+    - Design your intial PCB prototype to be easily reworkable to make up for both design and manufacturing mistakes
+    - Understand your manufacturer capabilities by developing subsection or component test boards (this can also help you get a sense of layout and routing regarding said component). This can help make sure the manufacturing process, such as reflow temp, is successful with the IC before integrating into the larger system
+- How to isolate/assess the where issues come from between design, firmware, and chip / manufacturing issues
+- Gain famililiarity on dev board to get code / mcu development familiarity before doing pin assigment on PCBA
+- Many more!
+
 What would you do differently if you had to build this device again?
+
+- One thing I would do differently is minimizing risk from the beginning of the project. Either modifying the initial idea CNC or conceptulizing it in a way that the whole system can run from a single PCBA would have been helpful for mitigating risk with board manufacturing issues.
+- Overall, if done outside the time constraints of the course I have tried to develop a whole working system or at least proof of concept on development boards to get more familiar with the components and firmware considerations before PCB design. This would also help mitigate firmware vs hardware vs manufacturing issues when doing board bringup and final development and integration of the device on the PCBAs.
+- A small change for the PCBs would be using slightly larger test points and traces whenever possible, which would have made rework soldering a bit more pleasant.
+- I think our approach to the second project was mostly good, but again mitigating risk would have saved some time. For instance, we thought we could still use both MCUs and the stepper motor driver, and I spent some time trying to put together a rushed UART commincation between the MCUs by repurposing pin connections from the original CNC idea. This made the implementation of the system unecessarily complex, and wasted time. Eventually we gave up on that and switched to a servo using SAMW25 pwm, which could have been done from the beginning
 
 ### Next Steps & Takeaways
 
 What steps are needed to finish or improve this project?
 
+- For the Gyro, next steps would to be find and resolve the TCC PWM issue on all other pins and use a working pin for the servo motor. Then develop a driver for the servo to ramp speed to provide torque to boat
+    - Implement kalman filter for sensor fusion
+    - Implement PID for tilt compensation (moving servo)
+
 What did you learn in ESE5160 through the lectures, assignments, and this course-long prototyping project?
+
+- The lectures gave a initial idea of embedded design considerations, the approach to Altium, RTOS fundamentals, and bootloader and otafu fundamentals
+- The assignments expanded on these and gave opportunity for practical implementation experience and a deeper understanding
 
 ### Project Links
 
