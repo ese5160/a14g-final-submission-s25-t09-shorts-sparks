@@ -46,7 +46,7 @@ Include your system-level block diagram here.
 
 Where did you face difficulties? This could be in firmware, hardware, software, integration, etc.
 
-- Our major challenge 
+- Our major challenge was hardwware (and as a result a lack of time), due to unforseen factors from the manufactures that caused countless unfixable PCM issues (potentially wrong reflow temperature that killed the ICs). 
 
 How did you overcome these challenges?
 
