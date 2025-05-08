@@ -11,6 +11,8 @@
 
 ## 1. Video Presentation
 
+https://drive.google.com/file/d/10uaTPHjv0_yxICQpvfujqLQYtL-Gkd34/view?usp=sharing
+
 ## 2. Project Summary
 
 ### Device Description:  
