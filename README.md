@@ -11,7 +11,7 @@
 
 ## 1. Video Presentation
 
-https://drive.google.com/file/d/10uaTPHjv0_yxICQpvfujqLQYtL-Gkd34/view?usp=sharing
+[Video in Google Drive](https://drive.google.com/file/d/10uaTPHjv0_yxICQpvfujqLQYtL-Gkd34/view?usp=sharing)
 
 ## 2. Project Summary
 
@@ -101,6 +101,22 @@ Note: Since we had a late project change, we have created new HRS and SRS for th
 
 ### HRS
 
+| Req ID | Requirement | Review |
+| ------ | ----------- | ------ |
+| HRS-01 | We shall repurpose the PCBA from the CNC project using as much hardware as possible | Success: we used the PCBA. Used everything besides SAMD21 and stepper motor driver (timeline constraint) |
+| HRS-02 | We shall reporpose as much of mechanical hardware as possible | Success: Used the Spindle motor as flywheel motor, bearing blocks, linear rods, aluminum extrusion, ... See pictures/video to see structure |
+| HRS-03 | The DC flywheel shall be driven with a mosfet driver to allow for PWM speed control | Success: See video demos for control |
+| HRS-04 | The system shall have external non-voilatile memory (microSD) of no less than 512MB for storing G-code and current progress (in any pause scenario) | N/A |
+| HRS-05 |  | N/A |
+| HRS-06 |  | N/A |
+| HRS-07 |  | N/A |
+| HRS-08 |  | N/A |
+| HRS-09 |  | N/A |
+| HRS-10 |  | N/A |
+| HRS-11 |  | N/A |
+| HRS-12 | The stepper motors shall use encoders for closed loop feedback | N/A |
+| HRS-13 | A SAMD21 for each axis shall handle the closed loop control | N/A |
+
 IMU shall sample at least at 200 Hz (we will request measurements at 200 Hz for kalman filter input)
 
 MCU (capabilities?) (at least FM i2c?, WIFI, PWM, SPI, ..., flash space for bootloader and Application code)
@@ -185,6 +201,10 @@ Included for reference, not for review as the project could not be completed in 
 | SRS-15 | The communication between MUC and SD card shall use SPI | N/A    |
 
 ## 4. Project Photos & Screenshots
+
+### Final Project Assembly
+
+
 
 ### Standalone PCBA, top
 
