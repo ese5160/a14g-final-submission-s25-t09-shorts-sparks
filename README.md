@@ -21,8 +21,7 @@ Give a 2 sentence description of your device.
 
 What inspired you to do the project? What problem is your device solving?
 
-- The inspiration for our project was less of an "inspiration", more of a "maximize what we had". Due to our neumerous manufacturer issues that made the original project (CNC machine) impossible. We took everything that remained functional on our PCB, and asked ourselves what is the coolest project we could make. Specifically, we had 1 board semi functional including the SAMW25, Mosfet driver for big DC motor, Stepper driver, all of the power regulation (24V, 5V, 3.3V) and a QWIIC connector to I2C. From here, we came up with this boat stabilizer idea (control moment gyro/CMG) as it perfectly maximizes our functional hrdware. Our original CNC spindle motor was repurposed to spin a flywheel, the stepper motor could be used as the gimbal actuator, and the QWIIC connector allows us to connect an external IMU to measure a the tilt of a boat so that the CMG could actively compensate and reduce the rocking motion. 
-
+- The inspiration for our project was less of an "inspiration", more of a "maximize what we had". Due to our neumerous manufacturer issues that made the original project (CNC machine) impossible. We took everything that remained functional on our PCB, and asked ourselves what is the coolest project we could make. Specifically, we had 1 board semi functional including the SAMW25, Mosfet driver for big DC motor, Stepper driver, all of the power regulation (24V, 5V, 3.3V) and a QWIIC connector to I2C. From here, we came up with this boat stabilizer idea (control moment gyro/CMG) as it perfectly maximizes our functional hrdware. Our original CNC spindle motor was repurposed to spin a flywheel, the stepper motor could be used as the gimbal actuator (later decided to use a simple servo instead), and the QWIIC connector allows us to connect an external IMU to measure a the tilt of a boat so that the CMG could actively compensate and reduce the rocking motion.
 
 How do you use the Internet to augment your device functionality?
 
@@ -57,6 +56,8 @@ How did you overcome these challenges?
    2. Rebuilt our Node-Red rebuilt dashboard interface, integrated flywheel power setting, logging IMU data (boat tilt), manual/automatic activation of the system, OTAFU, boat capsize detection that will alert the dashboard and text a number.
    3. Wrote new drivers for our new I2C device (IMU), and successfully read out the data of interest and send over to dashboard for data visualization + logging.
    4. Wrote a motor control driver that will ramp up/dpwn the speed to any user set speed from the dashboard.
+
+- Due to potentially even more hardware issue, we were unable to generate a second PWM for the gimbal actuator (servo)
 
 ### Prototype Learnings
 
