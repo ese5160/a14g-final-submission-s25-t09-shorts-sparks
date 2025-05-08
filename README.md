@@ -19,14 +19,14 @@ Give a 2 sentence description of your device.
 
 - A boat active stabilization device (Seakeeper) to combat the rocking (roll) motion of a boat at sea due to waves, improving rider comfort. The system uses an IMU to detect boat tilting and uses the gyroscopic precession effect of a spinning flywheel to counteract the motion.
 
-### What inspired you to do the project? What problem is your device solving?
+What inspired you to do the project? What problem is your device solving?
 
-The inspiration for our project was less of an "inspiration", more of a "maximize what we had". Due to our neumerous manufacturer issues that made the original project (CNC machine) impossible. We took everything that remained functional on our PCB, and asked ourselves what is the coolest project we could make. Specifically, we had 1 board semi functional including the SAMW25, Mosfet driver for big DC motor, Stepper driver, and a QWIIC connector to I2C. From here, we came up with this boat stabilizer idea (control moment gyro/CMG) as it perfectly maximizes our functional hrdware. Our original CNC spindle motor was repurposed to spin a flywheel, the stepper motor could be used as the gimbal actuator, and the QWIIC connector allows us to connect an external IMU to measure a the tilt of a boat so that the CMG could actively compensate and reduce the rocking motion. 
+- The inspiration for our project was less of an "inspiration", more of a "maximize what we had". Due to our neumerous manufacturer issues that made the original project (CNC machine) impossible. We took everything that remained functional on our PCB, and asked ourselves what is the coolest project we could make. Specifically, we had 1 board semi functional including the SAMW25, Mosfet driver for big DC motor, Stepper driver, and a QWIIC connector to I2C. From here, we came up with this boat stabilizer idea (control moment gyro/CMG) as it perfectly maximizes our functional hrdware. Our original CNC spindle motor was repurposed to spin a flywheel, the stepper motor could be used as the gimbal actuator, and the QWIIC connector allows us to connect an external IMU to measure a the tilt of a boat so that the CMG could actively compensate and reduce the rocking motion. 
 
 
-### How do you use the Internet to augment your device functionality?
+How do you use the Internet to augment your device functionality?
 
-The stabilization device could also be activated remotely (e.g. on a private yatch, the user does not need to go to the control room and could activate it from the comfort of their beedroom). The data of the boat's tilt is also transfered live to a dashboard which anyone anywhere could see, such as friends and family on shore. In addition, this allows for additional features such as "text emergency contact" when the boat is detected to have capsized in rough waters.
+- The stabilization device could also be activated remotely (e.g. on a private yatch, the user does not need to go to the control room and could activate it from the comfort of their beedroom). The data of the boat's tilt is also transfered live to a dashboard which anyone anywhere could see, such as friends and family on shore. In addition, this allows for additional features such as "text emergency contact" when the boat is detected to have capsized in rough waters.
 
 ### Device Functionality
 
