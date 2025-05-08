@@ -144,11 +144,22 @@ Requests and receives imu data at 200 hz to input into 200hz kalman filter -> 10
 
 ### Block diagram of your system
 
-
+![alt text](images/5160_Block_diagram.drawio.png)
 
 ## Codebase
 
-- A link to your final embedded C firmware codebases
-- A link to your Node-RED dashboard code
-- Links to any other software required for the functionality of your device
+### Firmware
 
+[Bootloader Folder in course repo](https://github.com/ese5160/final-project-t09-shorts-sparks/tree/main/Bootloader)
+
+[Application Folder in course repo](https://github.com/ese5160/final-project-t09-shorts-sparks/tree/main/Application)
+
+### Node-RED dashboard code
+
+[Node-RED Dashboard Flows](http://172.190.141.169:1880/#flow/61499bec7a1919ef)
+
+[Node-RED Dashboard UI](http://172.190.141.169:1880/ui/#!/0?socketid=omYwd3cGNLqyJbqNAAD4)
+
+### Other Software
+
+N/A
