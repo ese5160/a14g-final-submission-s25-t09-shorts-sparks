@@ -112,6 +112,56 @@ Drivers?
 
 Requests and receives imu data at 200 hz to input into 200hz kalman filter -> 100hz pid motor control loop
 
+### CNC Machine Requirements from A07G, noting differences from original proposal in A00G
+
+| Original | Current |
+| -------- | ------- |
+| Foam cyllinders 3d model prototypes |  Copper clad FR4 for milling PCB prototypes |
+| r(z), y, theta (cyllinder) cnc | x, y, z cnc |
+| Battery backup power in wall power outage case | Approved removal of battery as PCB milling times are faster so it is less expected and a less significant issue to lose power in the middle of a job |
+
+#### CNC A07G Hardware Requirements Specification (HRS)
+
+| Req ID | Requirement | Review |
+| ------ | ----------- | ------ |
+| HRS-01 | The CNC router shall use 3 stepper motors to control X, Y, Z axis | N/A |
+| HRS-02 | The CNC router shall use 1 DC motor for spindle | N/A |
+| HRS-03 | The DC spindle shall be driven with a mosfet driver to allow for PWM speed control | N/A |
+| HRS-04 | The system shall have external non-voilatile memory (microSD) of no less than 512MB for storing G-code and current progress (in any pause scenario) | N/A |
+| HRS-05 | The CNC router shall be able to engrave FR4 copper boards | N/A |
+| HRS-06 | The CNC shall have a milling area of at least 100 by 70mm (most common FR4 board size) | N/A |
+| HRS-07 | The CNC should have a milling area of at least 150 by 100mm (some larger boards have this dimention)| N/A |
+| HRS-08 | The CNC shall have a veritcal Z axis travel of at least 30mm (length of an engraving bit) | N/A |
+| HRS-09 | The CNC shall run off a wall outlet during operation | N/A |
+| HRS-10 | The CNC shall operate on 24V DC and draw no more than 10 A | N/A |
+| HRS-11 | The system shall use the SAMW25 as the main microcontroller and Wi-Fi communication IC | N/A |
+| HRS-12 | The stepper motors shall use encoders for closed loop feedback | N/A |
+| HRS-13 | A SAMD21 for each axis shall handle the closed loop control | N/A |
+| HRS-14 | Each axis shall have limit switches | N/A |
+| HRS-15 | Each axis shall use a leadscrew drive with linear rods for accuracy and rigidity | N/A |
+| HRS-16 | The system shall have user buttons on the PCB | N/A |
+| HRS-17 | The system shall have status indicator LEDs on the PCB | N/A |
+| HRS-18 | The system shall have a power (on/off) switch | N/A |
+
+#### CNC A07G Software Requirements Specification (SRS)
+
+| Req ID | Requirement | Review |
+| ------ | ----------- | ------ |
+| SRS-01 | The system shall be able to control all 3 stepper motors in its cyllindrical coordinates | N/A    |
+| SRS-02 | The MCU in the SAMW25 module shall run an RTOS | N/A    |
+| SRS-03 | The user shall be able to remotely operate the machine, setting presets, start/pause etc | N/A    |
+| SRS-04 | The system shall be able to send status updates and job progress to the web portal for the user | N/A    |
+| SRS-05 | The system shall be able to read and interoperate encoder values as positions | N/A    |
+| SRS-06 | The system shall be able to automatically pause the job when hitting limit switch | N/A    |
+| SRS-07 | The system shall be able to perform X/Y zeroing (calibration) with limit switches | N/A    |
+| SRS-08 | The system shall be able to automatically perform bed level calibration using the contuctive nature of the endmill and copper FR4 board | N/A    |
+| SRS-09 | The webpage portal shall handle remote uploading of jobs | N/A    |
+| SRS-10 | The webpage portal shall handle GCode generation from PCB gerber files leveraging existing software (e.g. FlatCAM) | N/A    |
+| SRS-11 | The webpage portal shall handle GCode to motor instruction conversion | N/A    |
+| SRS-12 | An OTAFU shall be implemented | N/A    |
+| SRS-13 | A CLI shall be implemented | N/A    |
+| SRS-14 | The communication between MCUs shall use I2C (and some gpio) | N/A    |
+| SRS-15 | The communication between MUC and SD card shall use SPI | N/A    |
 
 ## 4. Project Photos & Screenshots
 
