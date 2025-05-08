@@ -32,11 +32,13 @@ How do you use the Internet to augment your device functionality?
 
 Explain how your Internet-connected device is designed
 
-- answer
+- The entire system revolves(get it? haha) around the flywheel. Using the principle of gyroscopic precession, this allows us to tilt the flywheel back and forth (pitch), and produce a rolling tourque to counteract waves rocking a boat (usually boats are longer than they are wide so the largest tilt is in this axis). Our large DC motor (original CNC spindle), will spin up a laser cut disk with slots for 16 large bolts along the circomference (DIY flywheel with max rotational inertia). This inertia combined with a very high RPM (~5000 with 25% full power) gives us a large amount of stored angular momentum to use and counteract the boat rocking side to side. A servo motor is used to act as the gimbal actuator to tilt the flywheel assembly back and forth as it is very simple and provides decent torque. An IMU is used which allows us to measure current tilt and correct for it inside of a PID loop (originally also planend for a kalman filter with sensor fusion bt once again time was extreemly limited). All of the processing is handled by the SAMW25 which runs Free RTOS to simultaneously perform active stability compensation and other tasks such as CLI, and WIFI communication with Node-Red Dashboard.
 
 Include sensors, actuators, and other critical components.
 
-- answer
+- Sensor: IMU
+- Actuator: DC motor, Servo
+- Processing: SAMW25
 
 Include your system-level block diagram here.
 
