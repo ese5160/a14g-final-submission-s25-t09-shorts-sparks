@@ -15,7 +15,7 @@
 
 ### Device Description:  
 
-Give a 2 sentence description of your device.
+Brief Project Description.
 
 - Our final device is a boat active stabilization device (Seakeeper) to combat the rocking (roll) motion of a boat at sea due to waves, improving rider comfort. The system uses an IMU to detect boat tilting and uses the gyroscopic precession effect of a spinning flywheel to counteract the motion.
 - For most of the semester, our project was a 3 axis CNC machine for milling prototype PCBs. Due to board issues discovered and isolated to problems outside of our control during board bringup, we worked with the Teaching Team to do a very late project change to salvage our PCB in a demoable project. Read here for more information on board issues: [Board Issues Google Document](https://docs.google.com/document/d/17aVozhZWAjP6q5agUZiOJsjJb8daSV915WeSpyRnOJc/edit?usp=sharing)
@@ -30,25 +30,19 @@ How do you use the Internet to augment your device functionality?
 
 ### Device Functionality
 
-Explain how your Internet-connected device is designed
-
-- The entire system revolves(get it? haha) around the flywheel. Using the principle of gyroscopic precession, this allows us to tilt the flywheel back and forth (pitch), and produce a rolling tourque to counteract waves rocking a boat (usually boats are longer than they are wide so the largest tilt is in this axis). Our large DC motor (original CNC spindle), will spin up a laser cut disk with slots for 16 large bolts along the circomference (DIY flywheel with max rotational inertia). This inertia combined with a very high RPM (~5000 with 25% full power) gives us a large amount of stored angular momentum to use and counteract the boat rocking side to side. A servo motor is used to act as the gimbal actuator to tilt the flywheel assembly back and forth as it is very simple and provides decent torque. An IMU is used which allows us to measure current tilt and correct for it inside of a PID loop (originally also planend for a kalman filter with sensor fusion bt once again time was extreemly limited). All of the processing is handled by the SAMW25 which runs Free RTOS to simultaneously perform active stability compensation and other tasks such as CLI, and WIFI communication with Node-Red Dashboard.
-
-Include sensors, actuators, and other critical components.
+The entire system revolves(get it? haha) around the flywheel. Using the principle of gyroscopic precession, this allows us to tilt the flywheel back and forth (pitch), and produce a rolling tourque to counteract waves rocking a boat (usually boats are longer than they are wide so the largest tilt is in this axis). Our large DC motor (original CNC spindle), will spin up a laser cut disk with slots for 16 large bolts along the circomference (DIY flywheel with max rotational inertia). This inertia combined with a very high RPM (~5000 with 25% full power) gives us a large amount of stored angular momentum to use and counteract the boat rocking side to side. A servo motor is used to act as the gimbal actuator to tilt the flywheel assembly back and forth as it is very simple and provides decent torque. An IMU is used which allows us to measure current tilt and correct for it inside of a PID loop (originally also planend for a kalman filter with sensor fusion bt once again time was extreemly limited). All of the processing is handled by the SAMW25 which runs Free RTOS to simultaneously perform active stability compensation and other tasks such as CLI, and WIFI communication with Node-Red Dashboard.
 
 - Sensor: IMU
 - Actuator: DC motor, Servo
 - Processing: SAMW25
 
-Include your system-level block diagram here.
-
-- answer
+![alt text](images/5160_Block_diagram.drawio.png)
 
 ### Challenges
 
 Where did you face difficulties? This could be in firmware, hardware, software, integration, etc.
 
-- Our major challenge was hardwware (and as a result a lack of time), due to unforseen factors from the manufactures that caused countless unfixable PCB issues (potentially wrong reflow temperature that killed the ICs). This quite literally killed our original project, leaving us only 3 days to try to implement and demo a new project from scratch.
+- Our major challenge was hardware (and as a result a lack of time), due to unforseen factors from the manufactures that caused countless unfixable PCB issues (potentially wrong reflow temperature that killed the ICs). This quite literally killed our original project, leaving us only 3 days to try to implement and demo a new project from scratch.
 
 - The new project suffered from lack of development/debugging time, with potential further hardware issues that we did not have time to pinpoint (unable to move our gimbal actuator as we could not get a second PWM to output from a different pin). This meant that we were unable to demonstrate the full integrated active roll compensation (which was the mian selling point). 
 
@@ -124,6 +118,8 @@ Requests and receives imu data at 200 hz to input into 200hz kalman filter -> 10
 
 #### CNC A07G Hardware Requirements Specification (HRS)
 
+Included for reference, not for review as the project could not be completed in this form.
+
 | Req ID | Requirement | Review |
 | ------ | ----------- | ------ |
 | HRS-01 | The CNC router shall use 3 stepper motors to control X, Y, Z axis | N/A |
@@ -146,6 +142,8 @@ Requests and receives imu data at 200 hz to input into 200hz kalman filter -> 10
 | HRS-18 | The system shall have a power (on/off) switch | N/A |
 
 #### CNC A07G Software Requirements Specification (SRS)
+
+Included for reference, not for review as the project could not be completed in this form.
 
 | Req ID | Requirement | Review |
 | ------ | ----------- | ------ |
@@ -198,6 +196,12 @@ Requests and receives imu data at 200 hz to input into 200hz kalman filter -> 10
 ### Block diagram of your system
 
 ![alt text](images/5160_Block_diagram.drawio.png)
+
+#### A00G initial proposal system diagram for original CNC mill project
+
+![alt text](images/BackgroundV2_Detailed.drawio.png)
+
+This is the early diagram that remained mostly ture for throughout the PCB implementation and until the weekend before demo day, when enough critial issues with the PCBA manufacturing was found and isolate to issues outside our control and reworking capability that wee moved to the boat stabilization project.
 
 ## Codebase
 
