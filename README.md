@@ -15,7 +15,9 @@
 
 ### Device Description:  
 
-A boat active stabilization device (Seakeeper) to combat the rocking (roll) motion of a boat at sea due to waves, improving rider comfort. The system uses an IMU to detect boat tilting and uses the gyroscopic precession effect of a spinning flywheel to counteract the motion.
+Give a 2 sentence description of your device.
+
+- A boat active stabilization device (Seakeeper) to combat the rocking (roll) motion of a boat at sea due to waves, improving rider comfort. The system uses an IMU to detect boat tilting and uses the gyroscopic precession effect of a spinning flywheel to counteract the motion.
 
 ### What inspired you to do the project? What problem is your device solving?
 
@@ -37,6 +39,8 @@ Include your system-level block diagram here.
 ### Challenges
 
 Where did you face difficulties? This could be in firmware, hardware, software, integration, etc.
+
+Our 
 
 How did you overcome these challenges?
 
